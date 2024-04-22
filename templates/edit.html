@@ -1,0 +1,7 @@
+<form hx-put="/put?ID={{ .ID }}" hx-indicator="#spinner">
+    <input type="text" value="{{ .Name }}" name="name" placeholder="Task name" />
+    <button type="submit">
+      Edit
+      <span class="spinner" id="spinner">....</span>
+    </button>
+  </form>

@@ -1,0 +1,20 @@
+<li id="item-{{ .ID }}">
+    {{ .ID }} - {{ .Name }}
+    <button
+      hx-target="#item-{{ .ID }}"
+      hx-get="/edit/form?name={{ .Name }}&ID={{ .ID }}"
+      type="button"
+    >
+      Edit
+    </button>
+    <button
+      hx-delete="/delete/{{ .ID }}"
+      hx-swap="delete"
+      hx-target="#item-{{ .ID }}"
+      hx-indicator="#spinner-delete-{{ .ID }}"
+      type="button"
+    >
+      Delete
+      <span class="spinner" id="spinner-delete-{{ .ID }}">....</span>
+    </button>
+  </li>
